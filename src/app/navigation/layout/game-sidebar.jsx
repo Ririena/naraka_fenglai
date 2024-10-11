@@ -63,7 +63,7 @@ export default function GameSidebar({ isCollapsed, currentPath }) {
               </li>
               <li>
                 <Link
-                  href="/souljades"
+                  href="/souljade"
                   className={`flex items-center px-4 py-2 text-sm hover:bg-red-800 transition-colors duration-200 ${
                     isCollapsed ? "justify-center" : "space-x-3"
                   } ${currentPath === "/souljades" ? "bg-red-800" : ""}`}

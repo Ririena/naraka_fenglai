@@ -46,7 +46,7 @@ export default function CharacterSelect() {
                 }`}
               >
                 <Image
-                  src={character.icon} // Use the icon for grid
+                  src={character.icon} 
                   alt={character.name}
                   layout="fill"
                   objectFit="cover"
@@ -62,7 +62,7 @@ export default function CharacterSelect() {
         {/* Character Display */}
         <div className="lg:w-1/2 flex justify-center items-center my-8 lg:my-0">
           <Image
-            src={selectedCharacter.image} // Use full-size image for display
+            src={selectedCharacter.image} 
             alt={selectedCharacter.name}
             width={selectedCharacter.width}
             height={selectedCharacter.height}

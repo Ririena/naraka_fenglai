@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { Info, Eye, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Assuming the treasures data is imported from a JSON file
 import { treasures } from "@/json/TreasureList";
 import { Separator } from "@/components/ui/separator";
 
