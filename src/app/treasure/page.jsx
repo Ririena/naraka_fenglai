@@ -90,13 +90,15 @@ export default function TreasureList() {
         <div className="flex-1 relative">
           {!showDetails ? (
             <>
-              <Image
-                src={selectedTreasure.fullImage}
+              {/* <Image
+                src="/Echelon.mp4"
                 alt={selectedTreasure.name}
                 width={800}
                 height={600}
                 className="w-full h-64 md:h-full object-cover rounded-lg"
-              />
+              /> */}
+
+             
               <div className="absolute inset-0 flex items-center justify-center">
                 <Image
                   src={selectedTreasure.image}

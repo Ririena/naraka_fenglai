@@ -30,10 +30,11 @@ export default function CharacterSelect() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row lg:space-x-8">
         {/* Character Grid */}
-        <div className="lg:w-1/4">
-          <div className="grid grid-cols-5 gap-2">
+        <div className="lg:w-1/4 mb-8 lg:mb-0">
+          {/* Responsive grid with responsive gaps */}
+          <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-3 xl:grid-cols-4 gap-2 lg:gap-4">
             {characterlist.map((character) => (
               <button
                 key={character.id}
@@ -42,7 +43,7 @@ export default function CharacterSelect() {
                   router.push(`/character/${character.name.replace(/ /g, '_')}`);
                 }}
                 className={`relative w-16 h-16 rounded-lg overflow-hidden ${
-                  selectedCharacter.id === character.id ? 'ring-2 ring-red-500' : ''
+                  selectedCharacter?.id === character.id ? 'ring-2 ring-red-500' : ''
                 }`}
               >
                 <Image
@@ -51,9 +52,6 @@ export default function CharacterSelect() {
                   layout="fill"
                   objectFit="cover"
                 />
-                {/* <div className="absolute top-0 right-0 w-4 h-4 bg-red-500 flex items-center justify-center">
-                  <Star size={12} />
-                </div> */}
               </button>
             ))}
           </div>
@@ -72,15 +70,15 @@ export default function CharacterSelect() {
 
         {/* Character Info */}
         <div className="lg:w-1/4 space-y-4">
-          <h2 className="text-4xl font-bold">{selectedCharacter.name}</h2>
-          <div className="flex space-x-2">
+          <h2 className="text-3xl md:text-4xl font-bold">{selectedCharacter.name}</h2>
+          <div className="flex flex-wrap gap-2">
             <span className="bg-gray-700 px-2 py-1 rounded">Baizepedia</span>
             <span className="bg-gray-700 px-2 py-1 rounded">Cultivation</span>
           </div>
           <p className="text-sm">{selectedCharacter.description}</p>
 
           {/* Skills */}
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap gap-4">
             {selectedCharacter.skills ? ( // Check if skills exist
               selectedCharacter.skills.map((skill) => (
                 <div key={skill.id} className="relative w-12 h-12 bg-gray-700 rounded-lg overflow-hidden">
