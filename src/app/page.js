@@ -4,6 +4,7 @@ import AllNavigation from "./navigation/AllNavigation";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
+import { io } from "react-short-script";
 
 const PatchImage = ({ src, date, objectPosition = "object-cover" }) => (
   <motion.div
@@ -99,6 +100,7 @@ export default function Page() {
             {/* Mobile Full Width Image with Fade Effect */}
             <motion.div
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 1.0 }}
               transition={{ duration: 0.3 }}
               className="block md:hidden relative cursor-pointer"
             >
